@@ -1,4 +1,4 @@
-package com.ming.mingchat.dto;
+package com.ming.mingchat.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
