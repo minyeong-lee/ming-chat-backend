@@ -39,6 +39,6 @@ public class MemberService {
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
 
-        return new MemberLoginResponse(member.getEmail(), member.getNickname());
+        return new MemberLoginResponse(member.getId(), member.getEmail(), member.getNickname());
     }
 }

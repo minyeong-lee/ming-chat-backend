@@ -29,11 +29,10 @@ public class Couple {
 
     }
 
-    public Couple(int memberAId, int memberBId, Room room, String status) {
+    public Couple(int memberAId, int memberBId, Room room) {
         this.memberAId = memberAId;
         this.memberBId = memberBId;
         this.room = room;
-        this.status = status;
     }
 
     public int getId() {
@@ -62,6 +61,10 @@ public class Couple {
 
     public void setRoom(Room room) {
         this.room = room;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
