@@ -20,13 +20,11 @@ public class Member {
     @Column(name = "member_nickname", nullable = false)
     private String nickname;
 
-    public Member() {
-    }
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "couple_id")
+    private Couple couple;
 
-    public Member(String email, String password, String nickname) {
-        this.email = email;
-        this.password = password;
-        this.nickname = nickname;
+    public Member() {
     }
 
     public int getId() {
@@ -45,6 +43,10 @@ public class Member {
         return nickname;
     }
 
+    public Couple getCouple() {
+        return couple;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -57,6 +59,10 @@ public class Member {
         this.nickname = nickname;
     }
 
+    public void setCouple(Couple couple) {
+        this.couple = couple;
+    }
+
     @Override
     public String toString() {
         return "Member{" +
@@ -64,6 +70,7 @@ public class Member {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", nickname='" + nickname + '\'' +
+                ", coupleId=" + (couple != null ? couple.getId() : null) +
                 '}';
     }
 }
